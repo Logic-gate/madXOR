@@ -62,6 +62,12 @@ tarIN = tar to write chunks to
 tarName = name of encrypted tar
 tarkey = file to write tar key to
 ```
+**What is Goinig on**
+```
+[doc (+) key_out(entropy)] + RubbishOutput(n) = encryptedDoc
+encryptedDoc / chunkSize = division_name(chunkSize)
+tar[division_name(chunkSize)] (+) tarkey = tarName
+```
 *Example-->From madEncrypt folder*
 ```
 In [4]: x.MadEncrypt('madEncrypt/madEncrypt_example.txt', 'madEncrypt/encrypted/madEncrypt_example.txt', 'madEncrypt/madEncrypt_example.key', 7, 'madEncrypt/madEncrypt_example.rubbish', 3, 1000, 'madEncrypt/chunks/madEncrypt', 'madEncrypt/chunks', 'madEncrypt/madEncrypt_example.tar','madEncrypt/encrypted/madEncrypt_example.tar', 'madEncrypt/madEncrypt_example_tar.key')
@@ -69,10 +75,28 @@ In [4]: x.MadEncrypt('madEncrypt/madEncrypt_example.txt', 'madEncrypt/encrypted/
 ***
 **MadDecrypt** 
 ```
+In [1]: import xor
+In [2]: x = xor.Xor()
+In [3]: x.MadDecrypt(division_name, noOfChunks, chunkSize, key, decrypted_file, tarName, tarkey, tarOut, tarOutFolder):
+```
+```
+division_name = name of divided chunks
+noOfChunks = how many chunks are there - see info.txt at root path
+chunkSize = KB - divide encryptedDoc
+key = key to decrypt with
+decrypted_file = name of decrypted file
+tarName = name of encrypted tar
+tarkey = key to decrypt encrypted tar
+tarOut = name of decrypted tar
+tarOutFolder = name folder to write ecrypted data
+```
 
-```  
+*Example--> From madEncrypt folder*  
+do not forget to delete the contents of chunks
+```
+In [4]: x.MadDecrypt('madEncrypt/chunks/madEncrypt', 3, 1000, 'madEncrypt/madEncrypt_example.key', 'decrypted_example.txt', 'madEncrypt/encrypted/madEncrypt_example.tar', 'madEncrypt/madEncrypt_example_tar.key', 'madEncrypt/decrypted_example.tar', '.')
+```
 ***
-[![Build Status](https://travis-ci.org/paypal/kraken-js.png)](https://travis-ci.org/paypal/kraken-js)
 
 Notes On xor_webpage
 ---
@@ -88,3 +112,4 @@ TO
 def rand(self, size=[], chars=string.ascii_letters + string.digits)
 ```
 I have started an issue to resolve this *
+
