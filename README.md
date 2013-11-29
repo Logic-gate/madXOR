@@ -112,5 +112,5 @@ TO
 ```
 def rand(self, size=[], chars=string.ascii_letters + string.digits)
 ```
-I have started an issue to resolve this *
+I have started an issue to resolve this **<https://github.com/Logic-gate/madXOR/issues/1>**
 
