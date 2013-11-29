@@ -1,5 +1,6 @@
 madXOR
 ======
+[![Build Status](https://travis-ci.org/Logic-gate/madXOR.png)](https://travis-ci.org/Logic-gate/madXOR)  
 
 Preform Basic XOR Operations 
 ***
