@@ -1,0 +1,4 @@
+madXOR
+======
+
+Basic XOR functions
