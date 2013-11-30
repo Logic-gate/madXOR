@@ -112,5 +112,18 @@ TO
 ```
 def rand(self, size=[], chars=string.ascii_letters + string.digits)
 ```
-I have started an issue to resolve this **<https://github.com/Logic-gate/madXOR/issues/1>**
+***<https://github.com/Logic-gate/madXOR/issues/1>***  
 
+***
+Theory
+---
+The final goal is to accomplish real-time XOR-communictation.  
+
+![Alt text](http://sysbase.org/xor.png "Optional title")  
+***Based on <http://penbang.sysbase.org/other_projects/simple_xor.pdf>***
+```
+where EN is the data to be encrypted and DE is the data to be decrypted
+```
+
+I am fully aware of the challenges that await me, especially since the container will be in clear-text.  
+Check <http://penbang.sysbase.org/other_projects/simple_xor.pdf> for more info.
