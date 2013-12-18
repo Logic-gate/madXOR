@@ -127,3 +127,81 @@ where EN is the data to be encrypted and DE is the data to be decrypted
 
 I am fully aware of the challenges that await me, especially since the container will be in clear-text.  
 Check <http://penbang.sysbase.org/other_projects/simple_xor.pdf> for more info.
+
+Notes On Vault51 *BETA*
+---
+Vault51 is a random password generator(<http://www.emoticode.net/python/custom-random-password-generator.html>) and encrypter.  
+Later releases will include a config file and user defined paths for key
+
+**CMD**
+```
+python vault51.py -h
+usage: vault51.py [-h] [-d] [-l] [-u] [-s] [-o] [-n] [-edit]
+
+Generate random passwords and encrypt them. The default name for the encrypted
+file is file_encrypted. The default name for the key is file.key
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -d          number of digits (default: None)
+  -l          number of lower case char (default: None)
+  -u          number of upper case char (default: None)
+  -s          number of spacial char (default: None)
+  -o          path to store the password (default: None)
+  -n          name to append (default: None)
+  -edit       manually edit file (default: None)
+
+Run vault51.py without arguments to retrieve the file. This is a beta version
+```
+
+**Run**
+
+```
+python vault51.py -d 2 -l 3 -u 4 -o mypasswords -n johnDoe@facebook
+Generating Password
+GUjV99kdL
+Saved in mypasswords with johnDoe@facebook as an identifier
+Encrypting mypasswords
+...  Done!
+```
+
+**View** *Note the lack of arguments*
+```
+python vault51.py
+Please Input File Name: mypasswords
+Decrypting mypasswords
+...  Done!
+Showing Content::
+johnDoe@facebook::GUjV99kdL
+```
+
+**Manual Edit**
+```
+python vault51.py -edit mypasswords
+Decrypting mypasswords
+...  Done!
+Showing Content::
+johnDoe@facebook::GUjV99kdL
+```
+It start a nano session for `mypasswords`
+
+**Adding**
+```
+python vault51.py -d 2 -l 3 -u 4 -o mypasswords -n johnDoe@google
+Generating Password
+HX9D8Tlzr
+Saved in mypasswords with johnDoe@google as an identifier
+Encrypting mypasswords
+...  Done!
+```
+It will append the addition to `mypasswords`
+```
+python vault51.py
+Please Input File Name: mypasswords
+Decrypting mypasswords
+...  Done!
+Showing Content::
+johnDoe@facebook::GUjV99kdL
+johnDoe@google::HX9D8Tlzr
+```
+
