@@ -205,3 +205,14 @@ johnDoe@facebook::GUjV99kdL
 johnDoe@google::HX9D8Tlzr
 ```
 
+**Encrypted File**
+```
+\E&P,:m-6h77_SZSAQc`t4{Z+_5K#
+N$<*^CXp iAnfyR
+```
+**Key**
+```
+96R9B]-KWzq
+XX4i`:4+*3D?    !+dFe"aDJ(E_Ot1u(b%7f<(YqS7|X
+```
+
