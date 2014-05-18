@@ -183,7 +183,7 @@ Decrypting mypasswords
 Showing Content::
 johnDoe@facebook::GUjV99kdL
 ```
-It start a nano session for `mypasswords`
+It will start a nano session for `mypasswords`
 
 **Adding**
 ```
